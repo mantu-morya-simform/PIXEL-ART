@@ -6,7 +6,7 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background: #777676;
+  background: #212529;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
@@ -69,6 +69,6 @@ body {
 .gridSection {
   height: 40px;
   width: 40px;
-  background: #303f46;
+  background: #727a7c;
   cursor: pointer;
 }

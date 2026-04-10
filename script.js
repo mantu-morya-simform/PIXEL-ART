@@ -2,7 +2,7 @@ let gameBoard = document.querySelector(".game-board");
 let chosenColor = document.querySelectorAll(".colorPicker");
 let clearStyle = document.querySelector(".clearBtn");
 let selectedColor = "#000";
-let prevSelectedColor = null;
+let isDrawing = false;
 
 const createElement = () => {
   for (let i = 0; i < 15 * 15; i++) {
@@ -22,10 +22,21 @@ chosenColor.forEach((colorInput) => {
   });
 });
 
-gameBoard.addEventListener("click", (e) => {
+gameBoard.addEventListener("mousedown", (e) => {
+  isDrawing = true;
   if (e.target.tagName === "P") {
     e.target.style.backgroundColor = selectedColor;
   }
+});
+
+gameBoard.addEventListener("mouseover", (e) => {
+  if (isDrawing && e.target.tagName === "P") {
+    e.target.style.backgroundColor = selectedColor;
+  }
+});
+
+gameBoard.addEventListener("mouseup", () => {
+  isDrawing = false;
 });
 
 clearStyle.addEventListener("click", () => {
